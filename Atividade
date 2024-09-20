@@ -1,0 +1,41 @@
+#include <stdio.h>
+#include <string.h>
+#include <locale.h>
+
+int main (){
+	setlocale(LC_ALL, "Portuguese");
+	
+	char S1[1];
+	char S2[2];
+	char S3[3];
+	
+	printf("Digite um nome: ");
+	scanf("%s", &S1);
+	
+	printf("Digite um nome: ");
+	scanf("%s", &S2);
+	
+	printf("Digite um nome: ");
+	scanf("%s", &S3);
+	
+	
+	printf("%s: %d\n", S1, strlen(S1));
+	printf("%s: %d\n", S2, strlen(S2));
+	printf("%s: %d\n", S3, strlen(S3));
+	
+	if (strcmp(S1, S2) == 0) {
+		printf ("\nS1 e S2 são iguais!");
+		strcpy(S2,S3);
+		//printf("%S = %S\n", S3, S2);
+	}else {
+		printf ("\nS1 e S2 não são iguais!");
+		strcat (S3, S1);
+		strcat (S3, S2);
+		
+	}
+	
+	printf(" \n %s\n %s\n %s\n", S1, S2, S3);
+	
+	
+	return 0;
+}
