@@ -6,25 +6,25 @@ int main() {
 	
 	setlocale(LC_ALL, "portugese");
 	
-    char s1[100];
-    char s2[50];
-    char s3[100];
+	int i;
+    char s1[]= "Bem-vindo, ";
+    char s2[101];
+    
 
     
     printf("Digite seu nome completo: ");
-    fgets(s1, sizeof(s1), stdin);
+    fgets(s2, 100, stdin);
 
    
-    s1[strcspn(s1, "\n")] = 0;
-
+    for(i = 0; i < strlen(s2); i++) {
+    	if(s2[i] == ' '){
+    		break;
+		}
+	}
    
-    sscanf(s1, "%s", s2);
-
-
-    snprintf(s3, sizeof(s3), "\nBem-vindo, %s!", s2);
-
+   strncat(s1, s2, i);
    
-    printf("%s\n", s3);
+   printf("%s", s1);
 
     return 0;
 }
